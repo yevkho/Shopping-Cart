@@ -5,9 +5,9 @@ import { MemoryRouter } from "react-router";
 
 // import pages
 import Home from "../src/Pages/Home";
-import Shop from "../src/Pages/Shop";
-import ShopItem from "../src/Pages/ShopItem";
-import ErrorPage from "../src/Pages/ErrorPage";
+// import Shop from "../src/Pages/Shop";
+// import ShopItem from "../src/Pages/ShopItem";
+// import ErrorPage from "../src/Pages/ErrorPage";
 import RootLayout from "../src/Layouts/RootLayout";
 
 // DASHBOARD
