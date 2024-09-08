@@ -1,0 +1,98 @@
+/* NAV BAR */
+nav {
+  padding: 10px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+  color: black;
+}
+
+a.active {
+  background: var(--grey-color);
+}
+
+nav button {
+  align-self: baseline;
+  border: 1px solid transparent;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+nav button:hover {
+  border-color: #646cff;
+}
+
+.cartSidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  /* z-index: 1000; */
+  transform: translateX(100%); /* Initially hidden */
+  transition: transform 0.3s ease-in-out;
+}
+
+.cartSidebar.open {
+  transform: translateX(0); /* Slide in */
+}
+
+/* MAIN */
+main {
+  padding: 20px 30px;
+}
+
+.home,
+.shop {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ItemsContainer {
+  padding: 10px 30px;
+
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+.ItemsContainer a {
+  height: 24rem;
+
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--grey-color);
+  box-shadow: var(--boxshadow);
+
+  transition: transform 0.2s;
+}
+
+.ItemsContainer a:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.ItemsContainer img {
+  height: 66%;
+  object-fit: contain;
+  max-width: 100%;
+}

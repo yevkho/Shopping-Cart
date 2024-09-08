@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App shallow testing > basic snapshot 1`] = `
+<div>
+  <h2>
+    Shopping Cart
+  </h2>
+</div>
+`;
+
+exports[`Home > basic snapshot 1`] = `
+<div>
+  <div
+    class="home"
+  >
+    <h2>
+      Home
+    </h2>
+    <p>
+      Welcome to Home page!
+    </p>
+  </div>
+</div>
+`;
