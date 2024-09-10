@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "../Layouts/RootLayout.css";
+
+//NEW CONTEXT (can extract in separate module)
+export const ShopContext = createContext(null);
+//NEW CONTEXT
 
 export default function RootLayout() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -10,6 +14,8 @@ export default function RootLayout() {
     setIsCartOpen(isCartOpen === true ? false : true);
   }
 
+  // NavBar & Cart can be extracted ina separate component (see https://github.com/NontasBak/shopping-cart):
+  // e.g., <NavBar/>, <main/>, <Cart/>
   return (
     <>
       <nav>
@@ -22,7 +28,9 @@ export default function RootLayout() {
         <div>total items: {cartItems}</div>
       </nav>
       <main>
-        <Outlet context={[setCartItems]} />
+        <ShopContext.Provider value={{ cartItems, setCartItems }}>
+          <Outlet context={[setCartItems]} />
+        </ShopContext.Provider>
       </main>
 
       {isCartOpen && (

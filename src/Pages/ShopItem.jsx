@@ -4,6 +4,9 @@ import { useOutletContext } from "react-router-dom";
 import { useShoppingData } from "../hooks/useData";
 import styles from "../Pages/shopItem.module.css";
 
+import { useContext } from "react";
+import { ShopContext } from "../Layouts/RootLayout";
+
 export default function ShopItem() {
   const { itemId } = useParams();
   //import data
@@ -14,8 +17,10 @@ export default function ShopItem() {
   //track quantity of items
   const [quantity, setQuantity] = useState(0);
 
-  //sync local quantity with cart items
-  const [setCartItems] = useOutletContext();
+  //outlet context
+  // const [setCartItems] = useOutletContext();
+  //global context
+  const { setCartItems } = useContext(ShopContext);
 
   function sendItems() {
     setCartItems((q) => q + Number(quantity));

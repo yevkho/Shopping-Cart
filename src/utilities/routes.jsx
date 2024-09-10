@@ -13,7 +13,7 @@ import ShopLayout from "../Layouts/ShopLayout";
 const routes = [
   {
     path: "/",
-    element: <RootLayout />,
+    element: <RootLayout />, //can also be called <App/>
     errorElement: <ErrorPage />,
     children: [
       {
@@ -23,11 +23,11 @@ const routes = [
       },
       {
         path: "/shop",
-        element: <ShopLayout />,
+        element: <ShopLayout />, // this as a separate level is not necessary likely (see https://react.dev/learn/passing-data-deeply-with-context)
         children: [
           {
             index: true,
-            element: <Shop />,
+            element: <Shop />, // can probably wrap 'Shop' inside 'ShopLayout" in a singe component
           },
           {
             path: ":itemId",

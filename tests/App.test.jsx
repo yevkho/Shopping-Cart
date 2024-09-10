@@ -12,7 +12,7 @@ import RootLayout from "../src/Layouts/RootLayout";
 
 // DASHBOARD
 describe("Dashboard", () => {
-  it("presence of 'a' Nav links", () => {
+  it("render 'a' Nav links correctly", () => {
     render(
       <MemoryRouter>
         {" "}
@@ -59,3 +59,8 @@ describe("Home", () => {
     expect(container).toMatchSnapshot();
   });
 });
+
+//SHOP
+// there is potential to mock test global.fetch(...) function
+// with artificial resolution (e.g., 2-3) objects
+// and see of they properly render on screen (e.g., https://github.com/NontasBak/shopping-cart/blob/main/src/components/Shop/Shop.test.jsx)
